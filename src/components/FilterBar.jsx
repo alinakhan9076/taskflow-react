@@ -1,6 +1,10 @@
 function FilterBar() {
     return (
-        <h2>Filter Bar</h2>
+       <div>
+        <button>All</button>
+        <button>Active</button>
+        <button>Completed</button>
+       </div>
     )
 }
 

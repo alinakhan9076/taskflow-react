@@ -1,6 +1,6 @@
 function SearchBar() {
     return (
-        <h2>SearchBar</h2>
+        <input type="text" placeholder="Search task"/>
     )
 }
 

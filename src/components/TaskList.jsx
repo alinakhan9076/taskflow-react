@@ -1,6 +1,8 @@
 function TaskList() {
     return (
-        <h2>Task List</h2>
+        <div>
+            <p>No tasks yet!</p>
+        </div>
     )
 }
 
