@@ -1,7 +1,14 @@
-function TaskList() {
+function TaskList(props) {
+
     return (
         <div>
-            <p>No tasks yet!</p>
+            {
+                props.tasks.length === 0 ? (
+                    <p>No tasks yet</p>
+                ) : (
+                    <p>Tasks availale</p>
+                )
+            }
         </div>
     )
 }
