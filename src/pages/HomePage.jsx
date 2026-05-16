@@ -20,6 +20,16 @@ function HomePage() {
         setTasks([...tasks, taskObject])
     }
 
+    function deleteTask(id) {
+        
+        const updatedTasks = tasks.filter((task) => {
+        return task.id !== id
+    })
+
+    setTasks(updatedTasks)
+
+    }
+
     return (
         <div className="max-w-md mx-auto mt-10">
         <h1 className="text-3xl font-bold m-5">
@@ -31,7 +41,7 @@ function HomePage() {
 
         <SearchBar />
 
-        <TaskList tasks={tasks} />
+        <TaskList tasks={tasks} deleteTask={deleteTask} />
 
         </div>
     )
