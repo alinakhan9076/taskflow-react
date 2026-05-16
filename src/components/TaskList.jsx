@@ -1,3 +1,5 @@
+import TaskItem from "./TaskItem"
+
 function TaskList(props) {
 
     return (
@@ -10,9 +12,11 @@ function TaskList(props) {
                     
                     props.tasks.map((task) => (
 
-                        <div key={task.id}>
-                            <p>{task.text}</p>
-                        </div>
+                        <TaskItem 
+                        key={task.id}
+                        task={task}
+                        />
+                        
                     ))
                 )
             }

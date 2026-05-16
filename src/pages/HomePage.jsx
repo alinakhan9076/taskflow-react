@@ -21,8 +21,9 @@ function HomePage() {
     }
 
     return (
-        <div>
-        <h1>Task Manager</h1>
+        <div className="max-w-md mx-auto mt-10">
+        <h1 className="text-3xl font-bold m-5">
+            Task Manager</h1>
 
         <AddTaskForm addTask={addTask} />
 
@@ -31,7 +32,7 @@ function HomePage() {
         <SearchBar />
 
         <TaskList tasks={tasks} />
-        
+
         </div>
     )
 }

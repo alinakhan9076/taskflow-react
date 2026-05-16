@@ -1,6 +1,10 @@
-function TaskItem() {
+function TaskItem(props) {
     return (
-        <h2>Task Item</h2>
+        <div className="border p-3 rounded m-2">
+
+            <p>{props.task.text}</p>
+
+        </div>
     )
 }
 
