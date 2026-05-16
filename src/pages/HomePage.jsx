@@ -9,17 +9,29 @@ function HomePage() {
 
     const [tasks, setTasks] = useState([])
 
+    function addTask(newTask) {
+
+        const taskObject = {
+            id: Date.now(),
+            text: newTask,
+            completed: false
+        }
+
+        setTasks([...tasks, taskObject])
+    }
+
     return (
         <div>
         <h1>Task Manager</h1>
 
-        <AddTaskForm />
+        <AddTaskForm addTask={addTask} />
 
         <FilterBar />
 
         <SearchBar />
 
         <TaskList tasks={tasks} />
+        
         </div>
     )
 }

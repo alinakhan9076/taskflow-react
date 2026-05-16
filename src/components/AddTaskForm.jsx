@@ -1,11 +1,22 @@
 import { useState } from "react" 
 
-function AddTaskForm() {
+function AddTaskForm(props) {
 
     const [input, setInput] = useState("")
 
     function handleChange(event) {
         setInput(event.target.value)
+    }
+
+    function handleSubmit() {
+
+        if(input.trim() === "") {
+            return
+        }
+
+        props.addTask(input)
+
+        setInput("")
     }
 
     return (
@@ -15,9 +26,11 @@ function AddTaskForm() {
             type="text" 
             placeholder="Enter tasks" 
             value={input}
-             onChange={handleChange} />
+             onChange={handleChange}
+              />
 
-             <button>Add Task</button>
+             <button onClick={handleSubmit}>
+                Add Task</button>
         </div>
     )
 }
