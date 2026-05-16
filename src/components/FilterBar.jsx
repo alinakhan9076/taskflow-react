@@ -1,9 +1,23 @@
-function FilterBar() {
+function FilterBar(props) {
     return (
-       <div>
-        <button>All</button>
-        <button>Active</button>
-        <button>Completed</button>
+       <div className="flex gap-2 mb-4">
+
+        <button onClick={() => 
+            props.setFilter("all")}
+            >
+               All
+            </button>
+        <button onClick={() => 
+            props.setFilter("active")}
+            >
+                Active
+            </button>
+        <button onClick={() => 
+            props.setFilter("completed")}
+            >
+                Completed
+            </button>
+            
        </div>
     )
 }

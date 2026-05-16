@@ -9,6 +9,8 @@ function HomePage() {
 
     const [tasks, setTasks] = useState([])
 
+    const [filter, setFilter] = useState("all")
+
     function addTask(newTask) {
 
         const taskObject = {
@@ -48,6 +50,19 @@ function HomePage() {
         setTasks(updatedTasks)
     }
 
+    const filteredTasks = tasks.filter((task) => {
+
+        if(filter === "active") {
+            return task.completed === false
+        }
+
+        if(filter === "completed") {
+            return task.completed === true
+        }
+
+        return true
+    })
+
     return (
         <div className="max-w-md mx-auto mt-10">
         <h1 className="text-3xl font-bold m-5">
@@ -55,11 +70,12 @@ function HomePage() {
 
         <AddTaskForm addTask={addTask} />
 
-        <FilterBar />
+        <FilterBar filter={filter}
+        setFilter={setFilter}/>
 
         <SearchBar />
 
-        <TaskList tasks={tasks}
+        <TaskList tasks={filteredTasks}
          deleteTask={deleteTask} 
          toggleTask={toggleTask}
          />
