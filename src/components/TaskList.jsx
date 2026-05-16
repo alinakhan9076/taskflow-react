@@ -15,8 +15,8 @@ function TaskList(props) {
                         <TaskItem 
                         key={task.id}
                         task={task}
-
-            deleteTask={props.deleteTask}
+                        deleteTask={props.deleteTask}
+                        toggleTask={props.toggleTask}
                         />
                         
                     ))

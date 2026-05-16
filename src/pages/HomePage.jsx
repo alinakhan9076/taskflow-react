@@ -30,6 +30,24 @@ function HomePage() {
 
     }
 
+    function toggleTask(id) {
+
+        const updatedTasks = tasks.map((task) => {
+
+            if(task.id === id) {
+
+                return {
+                    ...task,
+                    completed: !task.completed
+                }
+            }
+
+            return task
+        })
+
+        setTasks(updatedTasks)
+    }
+
     return (
         <div className="max-w-md mx-auto mt-10">
         <h1 className="text-3xl font-bold m-5">
@@ -41,7 +59,10 @@ function HomePage() {
 
         <SearchBar />
 
-        <TaskList tasks={tasks} deleteTask={deleteTask} />
+        <TaskList tasks={tasks}
+         deleteTask={deleteTask} 
+         toggleTask={toggleTask}
+         />
 
         </div>
     )

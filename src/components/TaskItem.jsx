@@ -4,10 +4,28 @@ function TaskItem(props) {
         props.deleteTask(props.task.id)
     }
 
-    return (
-        <div className="border p-3 rounded m-2 flex justify-between">
+    function handleToggle() {
+        props.toggleTask(props.task.id)
+    }
 
-            <p>{props.task.text}</p>
+    return (
+        <div className="border p-3 rounded m-2 flex justify-between items-center">
+
+            <div className="flex items-center gap-2">
+
+                <input type="checkbox"
+                checked={props.task.completed}
+                onChange={handleToggle}/>
+
+                <p 
+                style={{textDecoration : props.task.completed ? 
+                "line-through"
+                    : "none"
+                }}
+                >
+                    {props.task.text}
+                </p>
+            </div>
 
             <button 
             onClick={handleDelete} 
@@ -19,4 +37,4 @@ function TaskItem(props) {
     )
 }
 
-export default TaskItem
+export default TaskItem 
