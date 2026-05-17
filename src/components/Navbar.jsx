@@ -1,7 +1,18 @@
+import { Link } from "react-router-dom"
+
 function Navbar() {
+
     return (
-        <h2>Navbar</h2>
+        <div className="flex gap-4 p-4 border-b mb-5">
+
+            <Link to="/"> Home </Link>
+
+            <Link to="stats"> Stats </Link>
+
+            <Link to="settings"> Settings </Link>
+        </div>
     )
 }
+    
 
 export default Navbar

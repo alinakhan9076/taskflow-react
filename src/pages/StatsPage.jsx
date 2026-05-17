@@ -1,7 +1,7 @@
 function StatsPage() {
     return (
         <div>
-        <h2>Stats Page</h2>
+        <h1 className="text-2xl font-bold"> Stats Page </h1>
         </div>
     )
 }
