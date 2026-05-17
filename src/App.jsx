@@ -1,3 +1,5 @@
+import { useState, useEffect } from "react"
+
 import Navbar from "./components/Navbar"
 
 import HomePage from "./pages/HomePage"
@@ -10,8 +12,37 @@ import {
 } from "react-router-dom"
 
 function App() {
+
+const [darkMode, setDarkMode] =
+useState(() => {
+
+  const savedTheme =
+  localStorage.getItem("darkMode")
+
+  return savedTheme === "true"
+})
+
+useEffect(() => {
+
+  localStorage.setItem(
+    "darkMode", darkMode
+  )
+
+}, [darkMode])
+
+function toggleDarkMode() {
+
+  setDarkMode(!darkMode)
+
+}
+
   return (
-    <div>
+    <div 
+    style={{
+      backgroundColor: darkMode ? "black" : "white",
+      color: darkMode ? "white" : "black",
+      minHeight: "100vh"
+    }}>
 
       <Navbar />
 
@@ -27,8 +58,12 @@ function App() {
       />
 
       <Route path="/settings"
-        element={<SettingsPage />}
-      />
+        element={<SettingsPage 
+        darkMode={darkMode}
+        toggleDarkMode={toggleDarkMode}
+        />
+      }
+    />
 
       </Routes>
       
