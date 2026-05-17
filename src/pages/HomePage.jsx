@@ -11,6 +11,8 @@ function HomePage() {
 
     const [filter, setFilter] = useState("all")
 
+    const [searchQuery, setSearchQuery] = useState("")
+
     function addTask(newTask) {
 
         const taskObject = {
@@ -52,15 +54,23 @@ function HomePage() {
 
     const filteredTasks = tasks.filter((task) => {
 
-        if(filter === "active") {
-            return task.completed === false
-        }
+        const matchesFilter =
+        filter === "all"
+        || (
+            filter === "active"
+            && task.completed === false
+        )
+        || (
+            filter === "completed"
+            && task.completed === true
+        )
 
-        if(filter === "completed") {
-            return task.completed === true
-        }
+        const matchesSearch = task.text
+        .toLowerCase()
+        .includes(searchQuery.toLowerCase())
 
-        return true
+        return matchesFilter && matchesSearch
+
     })
 
     return (
@@ -73,7 +83,8 @@ function HomePage() {
         <FilterBar filter={filter}
         setFilter={setFilter}/>
 
-        <SearchBar />
+        <SearchBar searchQuery={searchQuery}
+        setSearchQuery={setSearchQuery}/>
 
         <TaskList tasks={filteredTasks}
          deleteTask={deleteTask} 
