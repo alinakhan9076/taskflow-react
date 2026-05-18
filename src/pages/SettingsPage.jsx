@@ -10,7 +10,7 @@ function SettingsPage(props) {
                 {
                     props.toggleDarkMode
                     ? "Disable Dark Mode"
-                    :"Enable Dark Mode"
+                    : "Enable Dark Mode"
                 }
             </button>
              

@@ -96,8 +96,8 @@ function HomePage() {
     })
 
     return (
-        <div className="max-w-md mx-auto mt-10">
-        <h1 className="text-3xl font-bold m-5">
+        <div className="max-w-xl mx-auto p-4">
+        <h1 className="text-3xl font-bold mb-5">
             Task Manager</h1>
 
         <AddTaskForm addTask={addTask} />
