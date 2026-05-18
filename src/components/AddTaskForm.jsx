@@ -1,11 +1,13 @@
-import { useState } from "react" 
+import { useState } from "react"
 
 function AddTaskForm(props) {
 
     const [input, setInput] = useState("")
 
-    function handleChange(event) {
-        setInput(event.target.value)
+    const [newCategory, setNewCategory] = useState("Study")
+
+    function handleChange(e) {
+        setInput(e.target.value)
     }
 
     function handleSubmit() {
@@ -14,7 +16,7 @@ function AddTaskForm(props) {
             return
         }
 
-        props.addTask(input)
+        props.addTask(input, newCategory)
 
         setInput("")
     }
@@ -30,9 +32,18 @@ function AddTaskForm(props) {
              className="border p-2 "
               />
 
+            <select value={newCategory}
+                onChange={(event) => { setNewCategory(event.target.value)}}
+                className="border p-2" >
+                    <option value="Study">Study</option>
+                    <option value="Work">Work</option>
+                    <option value="Personal">Personal</option>
+                </select>
+
              <button onClick={handleSubmit}
              className="border px-3">
                 Add Task</button>
+                
         </div>
     )
 }

@@ -16,7 +16,7 @@ function TaskItem(props) {
                 <input type="checkbox"
                 checked={props.task.completed}
                 onChange={handleToggle}/>
-
+            <div>
                 <p 
                 style={{textDecoration : props.task.completed ? 
                 "line-through"
@@ -25,7 +25,11 @@ function TaskItem(props) {
                 >
                     {props.task.text}
                 </p>
+
+                <p className="text-sm">{props.task.category}</p>
             </div>
+
+         </div>
 
             <button 
             onClick={handleDelete} 

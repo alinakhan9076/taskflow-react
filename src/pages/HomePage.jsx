@@ -31,15 +31,16 @@ function HomePage() {
     }, [tasks])
 
     // Add task
-    function addTask(newTask) {
+    function addTask(taskText, taskCategory) {
 
-        const taskObject = {
+        const newTask = {
             id: Date.now(),
-            text: newTask,
-            completed: false
+            text: taskText,
+            completed: false,
+            category: taskCategory
         }
 
-        setTasks([...tasks, taskObject])
+        setTasks([...tasks, newTask])
     }
 
     // Delete task
