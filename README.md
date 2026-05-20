@@ -37,7 +37,7 @@ This app works on:
 
 ## Deployment 
 
-Live Link:
+Live Link: https://calm-licorice-0dfad8.netlify.app/
 
 ## Run Locally
 
