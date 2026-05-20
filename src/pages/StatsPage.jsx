@@ -30,13 +30,14 @@ function StatsPage() {
     )
 
     return (
-        <div>
+        <div className="max-w-3xl mx-3 md:mx-auto mt-6 md:mt-10
+         bg-white text-black p-8 rounded-3xl shadow-xl">
 
-            <h1 className="text-3xl font-bold mb-5"> 
+            <h1 className="text-4xl font-bold text-cyan-700 mb-8"> 
                 Stats Page
             </h1>
 
-            <div className="space-y-3">
+            <div className="space-y-4 text-xl">
 
                 <p>
                     Total Tasks: {totalTasks}

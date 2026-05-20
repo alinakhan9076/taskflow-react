@@ -1,21 +1,27 @@
 function FilterBar(props) {
     return (
-       <div className="flex gap-2 mb-4">
+       <div className="flex flex-wrap gap-3 mb-5">
 
-        <button className="border px-3 py-1"
-        onClick={() => 
+        <button 
+            className="bg-cyan-600 text-white px-4 py-2
+            rounded-lg hover:bg-cyan-700"
+            onClick={() => 
             props.setFilter("all")}
             >
                All
             </button>
-        <button  className="border px-3 py-1"
-        onClick={() => 
+        <button 
+            className="bg-cyan-600 text-white px-4 py-2
+            rounded-lg hover:bg-cyan-700"
+             onClick={() => 
             props.setFilter("active")}
             >
                 Active
             </button>
-        <button  className="border px-3 py-1"
-        onClick={() => 
+        <button  
+            className="bg-cyan-600 text-white px-4 py-2
+            rounded-lg hover:bg-cyan-700"
+            onClick={() => 
             props.setFilter("completed")}
             >
                 Completed

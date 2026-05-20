@@ -1,14 +1,14 @@
 function SettingsPage(props) {
     return (
-        <div>
-        <h1 className="text-3xl font-bold mb-5">
-            Settings Page</h1>
+        <div className="max-w-xl mx-auto bg-white p-6 rounded-2xl shadow-lg">
+        <h1 className="text-4xl font-bold text-cyan-700 mb-6">
+            Settings</h1>
 
             <button 
             onClick={props.toggleDarkMode}
-            className="border px-4 py-2 rounded">
+            className="bg-cyan-600 hover:bg-cyan-700 text-white px-5 py-3 rounded-xl">
                 {
-                    props.toggleDarkMode
+                    props.darkMode
                     ? "Disable Dark Mode"
                     : "Enable Dark Mode"
                 }

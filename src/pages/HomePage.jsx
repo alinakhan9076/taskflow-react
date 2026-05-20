@@ -97,10 +97,13 @@ function HomePage() {
     })
 
     return (
-        <div className="max-w-xl mx-auto p-4">
-        <h1 className="text-3xl font-bold mb-5">
-            Task Manager</h1>
+        <div className="min-h-screen bg-blue-50 p-6">
+        <div className="max-w-5xl mx-3 md:mx-auto mt-6 md:mt-10 bg-slate-100
+        rounded-3xl shadow-xl p-4 md:p-8">
 
+            <h1 className="text-4xl md:text-6xl font-bold text-center text-cyan-600 mb-8 ">
+                TaskFlow
+            </h1>
         <AddTaskForm addTask={addTask} />
 
         <FilterBar filter={filter}
@@ -113,7 +116,9 @@ function HomePage() {
          deleteTask={deleteTask} 
          toggleTask={toggleTask}
          />
-
+        
+        </div>
+        
         </div>
     )
 }

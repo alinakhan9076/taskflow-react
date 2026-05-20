@@ -1,6 +1,6 @@
 function SearchBar(props) {
     return (
-        <div className="mb-4">
+        <div className="mb-6">
 
         <input type="text" 
         placeholder="Search task"
@@ -8,7 +8,8 @@ function SearchBar(props) {
         onChange={(event) =>
             props.setSearchQuery(event.target.value)
         }
-        className="border p-2 rounded w-full"/>
+        className="border border-gray-300 p-4 rounded-xl
+        w-full outline-none text-black"/>
 
          </div>
     )

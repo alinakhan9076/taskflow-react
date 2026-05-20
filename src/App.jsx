@@ -38,11 +38,10 @@ function toggleDarkMode() {
 
   return (
     <div 
-    style={{
-      backgroundColor: darkMode ? "black" : "white",
-      color: darkMode ? "white" : "black",
-      minHeight: "100vh"
-    }}>
+    className={darkMode ? "bg-black text-white min-h-screen"
+      : "bg-slate-100 text-black min-h-screen"
+    }
+    >
 
       <Navbar />
 
